@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv*/
+venv/
+*.egg-info/
+
+# Secrets and local config: never commit these
+.env
+.env.*
+*.pem
+.aws/
+credentials
+
+# Game and run logs (may contain your prompts and model output)
+logs/
+
+# Model weights and caches (large, and not yours to redistribute)
+*.safetensors
+*.gguf
+*.bin
+*.pt
+models/
+.cache/
+huggingface/
+
+# macOS and editors
+.DS_Store
+.idea/
+.vscode/

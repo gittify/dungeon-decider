@@ -1,0 +1,8 @@
+{
+  "thresholds": {
+    "fast": 0.70,
+    "hedge": 0.45,
+    "ungrounded": 0.30,
+    "feasible_min": 0.35
+  }
+}

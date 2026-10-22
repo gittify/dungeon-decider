@@ -1,0 +1,16 @@
+{
+  "thresholds": {
+    "fast": 0.0,
+    "hedge": 0.0,
+    "ungrounded": 0.3,
+    "feasible_min": 0.35
+  },
+  "tuned_on": "dev",
+  "n_dev": 30,
+  "fake": false,
+  "targets": {
+    "fast_acc": 0.95,
+    "hedge_acc": 0.8,
+    "max_false_refusal": 0.05
+  }
+}

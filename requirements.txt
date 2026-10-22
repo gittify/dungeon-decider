@@ -1,0 +1,5 @@
+# Game + eval client (no torch needed: it talks to the Decider server over HTTP)
+strands-agents>=1.0
+pytest>=8
+# The Decider SERVER lives in its own venv (it pulls torch/transformers):
+#   pip install "strands-decider[mlx]"      # Apple silicon; see docs/STEP1_MAC.md
