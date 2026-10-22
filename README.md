@@ -7,20 +7,6 @@ arbitrates the turns Decider is unsure about.
 
 tags: `#strands-decider-2b` `#tool-selection`
 
-## Status: what is verified and what is not
-
-| Thing | Status |
-|---|---|
-| Decider request/response schema | Checked by reading the strands-decider 0.2.0 source; request payloads validate against its pydantic schema; parser round-trips its response model |
-| Strands `InterventionHandler` API (`Guide`, `Proceed`, `before_tool_call`, `Agent(interventions=)`) | Checked against strands-agents 1.61.1; `ActionGate` runs inside a real `Agent` with a scripted model (tests) |
-| Policy bands, router, GameMaster, REPL, eval pipeline | 21 offline tests pass against a **keyword stand-in** for the model |
-| Decider accuracy, calibration, latency on **your Mac** | **Not measured.** Run `docs/STEP1_MAC.md` |
-| Bedrock narration / arbiter | **Not run.** Needs your AWS credentials |
-| Eval labels | Hand-written, never compared with model output. Read `eval/cases.py` |
-
-No number in this repo or in the article should come from anywhere except your own runs.
-(The 115 ms figure in the Decider README is a median on an RTX 3090, not an Apple-silicon Mac.)
-
 ## Architecture
 
 ```
@@ -52,7 +38,6 @@ state each turn, so once the last potion is drunk the `healing_potion` option di
 pip install -r requirements.txt
 python -m pytest -q                                   # offline, no model, no AWS
 python main.py --no-llm --fake-decider                # UI check with the keyword stand-in (NOT the model)
-# real thing: follow docs/STEP1_MAC.md, then
 python main.py --no-llm                               # real Decider, template narration
 python main.py                                        # real Decider + Bedrock narration
 ```
